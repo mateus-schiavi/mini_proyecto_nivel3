@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         $error_message = "Invalid Login. Please Try Again";
-        header('Location: index.php');
+        header('Location: ');
     }
 }
 

@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
     <h1>Login</h1>
-    <form action="./login.php" method="post">
+    <form action="./login.php" method="POST">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required><br><br>
 
