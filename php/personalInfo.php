@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
 } else {
-    // Manejar el caso en el que no se encuentre el usuario
+    echo 'User not found';
 }
 
 $conn->close();
