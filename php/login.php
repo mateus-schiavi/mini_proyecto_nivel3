@@ -1,10 +1,11 @@
 <?php
+
 session_start();
 require_once '../database/login_db.php';
 
 // Verifica se o usuário já está logado
 if (isset($_SESSION["user_id"])) {
-    header("Location: personal_info.php");
+    header("Location: personalInfo.php");
     exit();
 }
 
