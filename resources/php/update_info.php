@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(':id', $userNumber);
     $stmt->execute();
 
-    header('Location: user_profile.php');
+    header('Location: profile.php');
     exit();
 }
 
