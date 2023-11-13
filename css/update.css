@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Isso define a altura da tela como 100% da altura visível do viewport */
+    margin: 0; /* Isso remove as margens padrão do corpo */
+}
+
+/* Adicione esta regra no seu arquivo CSS para definir uma largura fixa para os inputs */
+.input-field {
+    width: 300px; /* ou qualquer valor desejado */
+}

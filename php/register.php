@@ -49,31 +49,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Registro</title>
-    <!-- Adicione seus estilos CSS aqui -->
-</head>
-<body>
-    <h1>Registro</h1>
-    
-    <?php
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="../css/register.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div>
+            <h1>Register</h1>
+        </div>
+
+        <?php
     // Exiba uma mensagem de erro, se houver
     if (isset($error_message)) {
         echo "<p>$error_message</p>";
     }
     ?>
 
-    <form action="register.php" method="post">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required><br><br>
+        <form action="register.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required><br><br>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required><br><br>
 
-        <label for="name">Nome:</label>
-        <input type="text" name="name" id="name" required><br><br>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required><br><br>
 
-        <input type="submit" value="Registrar">
-    </form>
-</body>
+            <input type="submit" value="Sign up">
+        </form>
+        <h4>or continue with these social profile</h4>
+        <div>
+            <img src="../assets/Google.svg" alt="google-logo">
+            <img src="../assets/Twitter.svg" alt="twitter-logo">
+            <img src="../assets/Gihub.svg" alt="github-logo">
+            <img src="../assets/Facebook.svg" alt="facebook-logo">
+        </div>
+
+    </body>
+
 </html>

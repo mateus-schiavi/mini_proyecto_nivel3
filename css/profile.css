@@ -1,0 +1,5 @@
+.profile-image {
+    max-width: 200px; /* Ajuste conforme necessário */
+    height: 50px;
+    border-radius: 50%; /* Isso adiciona cantos arredondados à imagem */
+}
