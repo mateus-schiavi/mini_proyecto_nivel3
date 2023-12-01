@@ -9,7 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 $userName = $_SESSION['user_name'];
 $userEmail = $_SESSION['user_email'];
 $userBio = $_SESSION['user_bio'];
-$userPhoto = $_SESSION['user_photo'];
 $userPhone = $_SESSION['user_phone'];
 ?>
 
@@ -17,35 +16,48 @@ $userPhone = $_SESSION['user_phone'];
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Personal Information</title>
-        <link rel="stylesheet" href="../css/register.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Se preferir, você pode adicionar o arquivo CSS local do Tailwind se o tiver instalado localmente -->
+    <!-- <link href="caminho/para/seu/arquivo/tailwind.css" rel="stylesheet"> -->
+    <!-- Seus estilos personalizados -->
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
 
-    </head>
-    <body>
+<body class="bg-gray-100">
 
-        <h3>Profile</h3>
+<div class="container mx-auto p-4">
+    <div class="flex justify-between items-center mb-4">
+        <h3 class="text-3xl font-bold">Profile</h3>
+        <a href="./update.php" class="inline-block px-4 py-2 rounded-lg bg-white border border-blue-500 text-blue-500">Edit</a>
+    </div>
 
-        <a href="./update.php">Edit</a>
+    <div class="mt-4">
+        <h4 class="text-xl font-semibold mb-2">NAME: <?php echo $userName; ?></h4>
+        <hr class="mb-2">
+        <h4 class="mb-2">BIO: <?php echo $userBio; ?></h4>
+        <hr class="mb-2">
+        <h4 class="mb-2">PHONE: <?php echo $userPhone; ?></h4>
+        <hr class="mb-2">
+        <h4 class="mb-2">EMAIL: <?php echo $userEmail; ?></h4>
+        <hr class="mb-2">
+        <h4 class="mb-2">PASSWORD: <?php echo str_repeat('*', 9); ?></h4>
+    </div>
 
-        <h4>PHOTO</h4>
-        <img src="<?php echo $userPhoto; ?>" alt="User Photo">
-        <h4>NAME: <?php echo $userName; ?></h4>
-        <h4>BIO: <?php echo $userBio; ?></h4>
-        <h4>PHONE: <?php echo $userPhone; ?></h4>
-        <h4>EMAIL: <?php echo $userEmail; ?></h4>
-        <h4>PASSWORD</h4>
+    <a href="./index.php" class="block mt-6 text-red-500 hover:underline">Logout</a>
+</div>
 
-        <a href="../index.php">Logout</a>
 
-    </body>
+
+
+</body>
 
 </html>

@@ -19,9 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_name'] = $user['name'];
         $_SESSION['user_bio'] = $user['bio'];
         $_SESSION['user_phone'] = $user['phone'];
-        $_SESSION['user_photo'] = $user['photo'];
 
-        header('Location: profile.php');
+        header('Location: ./profile.php');
         exit();
     } else {
         $error_message = 'Invalid User or Password. Try Again';

@@ -23,16 +23,14 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `bio` text DEFAULT NULL,
-  `phone` varchar(15) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `user_name` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `photo` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `phone` varchar(100) DEFAULT NULL,
+  `bio` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +39,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Admin',NULL,NULL,'admin@admin','admin',NULL),(2,'test',NULL,NULL,'test@test','test',NULL);
+INSERT INTO `users` VALUES (1,'Mateus Schiavi','mateus@schiavi','$2y$10$JYnzdavt8rT19OBT7X92a.yGxz4AWY5eKhKqG.Eo2lWpOaNfIDoSG','433-532-343','Futuro Ganador del Premio Turing',NULL),(2,'Damiana Schiavi','damiana@schiavi','$2y$10$VTcQl6W6j8ZXKfbDy2s99ut5f0hb1Jxbd8ZwM1913/rpZtqhQA6B6','352-442-451','Madre de un excelente programador',NULL),(3,'José Cláudio Schiavi','joséclaudio@schiavi','$2y$10$eR0OKD7ZmTJ08COWS.UkSOflXGxJo9V2.fmL6YchKzfi/RQZEzy46','523-361-424','Padre de un excelente programador',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-10 16:25:53
+-- Dump completed on 2023-12-01 14:50:12
