@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-
+<!-- index page -->
 <!DOCTYPE html>
 <html lang="en">
 
