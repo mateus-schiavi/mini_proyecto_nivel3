@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         // Insira o novo usuário no banco de dados
-        $query = "INSERT INTO users (email, password, name) VALUES (:email, :password, :name)";
+        $query = "INSERT INTO users (email, password, user_name) VALUES (:email, :password, :user_name)";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $hashedPassword);

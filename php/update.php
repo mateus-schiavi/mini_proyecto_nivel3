@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Atualizar as informações do usuário no banco de dados, incluindo o caminho da foto, bio e telefone
-    $query = "UPDATE users SET name = :name, email = :email, bio = :bio, phone = :phone, photo_path = :photo_path WHERE id = :id";
+    $query = "UPDATE users SET name = :name, email = :email, bio = :bio, phone = :phone WHERE id = :id";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':name', $newName);
     $stmt->bindParam(':email', $newEmail);
@@ -54,12 +54,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $userId = $_SESSION['user_id'];
-$query = "SELECT name, email, bio, phone FROM users WHERE id = :id";
+$query = "SELECT user_name, email, bio, phone FROM users WHERE id = :id";
 $stmt = $pdo->prepare($query);
 $stmt->bindParam(':id', $userId);
 $stmt->execute();
 $userInfo = $stmt->fetch();
-$userName = $userInfo['name'];
+$userName = $userInfo['user_name'];
 $userEmail = $userInfo['email'];
 $userBio = $userInfo['bio'];
 $userPhone = $userInfo['phone'];
@@ -98,10 +98,6 @@ $userPhone = $userInfo['phone'];
             <label for="new_phone">Phone:</label>
             <input type="text" name="new_phone" id="new_phone" class="input-field"
                 value="<?php echo $userPhone; ?>"><br><br>
-
-            <label for="new_photo">Photo:</label>
-            <input type="file" name="new_photo" id="new_photo" class="input-field">
-            <input type="submit" value="Save">
         </form>
 
         <a href="./profile.php">Return</a>
