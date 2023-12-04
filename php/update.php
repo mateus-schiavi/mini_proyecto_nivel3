@@ -83,7 +83,7 @@ $userPhone = $userInfo['phone'];
 
     <body>
         <h1>Change Info</h1>
-        <form action="update.php" method="post" enctype="multipart/form-data">
+        <form action="./update.php" method="post" enctype="multipart/form-data">
             <label for="new_name">Name:</label>
             <input type="text" name="new_name" id="new_name" class="input-field" value="<?php echo $userName; ?>"
                 required placeholder="Enter your name"><br><br>

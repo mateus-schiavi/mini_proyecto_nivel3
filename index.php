@@ -26,7 +26,7 @@ session_start();
             <p class="text-gray-600">Master web development by making real-life <br> projects. There are multiple
                 paths for you to <br> choose
             </p>
-            <form class="mt-6 text-center" action="./login.php" method="post">
+            <form class="mt-6 text-center" action="./php/login.php" method="post">
                 <div class="flex items-center border-b border-gray-300 py-2">
                     <input placeholder="Email" type="email" name="email" id="email" required
                         class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">
@@ -55,10 +55,10 @@ session_start();
 
             <h4 class="text-center mt-6">or continue with these social profiles</h4>
             <div class="flex justify-center items-center mt-4">
-                <img src="../assets/Google.svg" alt="google-logo" class="mr-2">
-                <img src="../assets/Twitter.svg" alt="twitter-logo" class="mr-2">
-                <img src="../assets/Gihub.svg" alt="github-logo" class="mr-2">
-                <img src="../assets/Facebook.svg" alt="facebook-logo" class="mr-2">
+                <img src="./assets/Google.svg" alt="google-logo" class="mr-2">
+                <img src="./assets/Twitter.svg" alt="twitter-logo" class="mr-2">
+                <img src="./assets/Gihub.svg" alt="github-logo" class="mr-2">
+                <img src="./assets/Facebook.svg" alt="facebook-logo" class="mr-2">
             </div>
 
             <h4 class="text-center mt-6">Don't have an account yet?<br> <a href="../php/register.php"

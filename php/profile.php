@@ -27,37 +27,38 @@ $userPhone = $_SESSION['user_phone'];
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100">
 
-<div class="container mx-auto p-4">
-    <div class="flex justify-between items-center mb-4">
-        <h3 class="text-3xl font-bold">Profile</h3>
-        <a href="./update.php" class="inline-block px-4 py-2 rounded-lg bg-white border border-blue-500 text-blue-500">Edit</a>
+    <div class="container mx-auto p-4 relative">
+
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-3xl font-bold">Profile</h3>
+            <a href="./update.php" class="inline-block px-4 py-2 rounded-lg bg-white border border-blue-500 text-blue-500">Edit</a>
+        </div>
+
+        <div class="mt-4">
+            <h4 class="text-xl font-semibold mb-2">NAME: <?php echo $userName; ?></h4>
+            <hr class="mb-2">
+            <h4 class="mb-2">BIO: <?php echo $userBio; ?></h4>
+            <hr class="mb-2">
+            <h4 class="mb-2">PHONE: <?php echo $userPhone; ?></h4>
+            <hr class="mb-2">
+            <h4 class="mb-2">EMAIL: <?php echo $userEmail; ?></h4>
+            <hr class="mb-2">
+            <h4 class="mb-2">PASSWORD: <?php echo str_repeat('*', 9); ?></h4>
+        </div>
+
+        <a href="../index.php" class="block mt-6 text-red-500 hover:underline">Logout</a>
     </div>
 
-    <div class="mt-4">
-        <h4 class="text-xl font-semibold mb-2">NAME: <?php echo $userName; ?></h4>
-        <hr class="mb-2">
-        <h4 class="mb-2">BIO: <?php echo $userBio; ?></h4>
-        <hr class="mb-2">
-        <h4 class="mb-2">PHONE: <?php echo $userPhone; ?></h4>
-        <hr class="mb-2">
-        <h4 class="mb-2">EMAIL: <?php echo $userEmail; ?></h4>
-        <hr class="mb-2">
-        <h4 class="mb-2">PASSWORD: <?php echo str_repeat('*', 9); ?></h4>
-    </div>
-
-    <a href="./index.php" class="block mt-6 text-red-500 hover:underline">Logout</a>
-</div>
-
-
-
+    <!-- Ícone no canto superior esquerdo -->
+    <img src="../assets/devchallenges.png" alt="Ícone" class="h-6 w-6 fixed top-0 left-0 mt-4 ml-4 z-50">
 
 </body>
 
 </html>
+
