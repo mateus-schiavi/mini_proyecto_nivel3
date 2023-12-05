@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 // Verificar si el usuário está logado, si sí redirigirlo para la página de perfil
 if (isset($_SESSION['user_id'])) {
@@ -32,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         // Insira o novo usuário no banco de dados
-        $query = "INSERT INTO users (email, password, user_name) VALUES (?, ?, ?)";
+        $query = "INSERT INTO users (user_name, email, password) VALUES (?, ?, ?)";
         $stmt = $pdo->prepare($query);
-        $stmt->bindParam(1, $email); // Use ? placeholder and bind by position
-        $stmt->bindParam(2, $hashedPassword); // Bind parameters by position
-        $stmt->bindParam(3, $name); // Bind parameters by position
+        $stmt->bindParam(1, $name); // Use ? placeholder and bind by position
+        $stmt->bindParam(2, $email); // Bind parameters by position
+        $stmt->bindParam(3, $hashedPassword); // Bind parameters by position
         $stmt->execute();
 
         // Redirigir el usuário a la página de perfil

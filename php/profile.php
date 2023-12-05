@@ -41,7 +41,7 @@ $userPhone = $_SESSION['user_phone'];
         </div>
 
         <div class="mt-4">
-            <h4 class="text-xl font-semibold mb-2">NAME: <?php echo $userName; ?></h4>
+            <h4 class="mb-2">NAME: <?php echo $userName; ?></h4>
             <hr class="mb-2">
             <h4 class="mb-2">BIO: <?php echo $userBio; ?></h4>
             <hr class="mb-2">

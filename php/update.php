@@ -15,23 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newBio = $_POST['new_bio'];
     $newPhone = $_POST['new_phone'];
 
-    $photoPath = '';  // Inicializa a variável $photoPath
-
-    // Processar o upload da foto apenas se um novo arquivo for enviado
-    $photoDir = 'uploads/';
-
-    if (isset($_FILES['new_photo']) && $_FILES['new_photo']['error'] === UPLOAD_ERR_OK) {
-        move_uploaded_file($_FILES['new_photo']['tmp_name'], $photoPath);
-    } else {
-        // Caso contrário, manter o valor existente de $photoPath
-        // Certifique-se de definir $photoPath com o valor atual no banco de dados
-        $query = "SELECT id FROM users WHERE id = :id";
-        $stmt = $pdo->prepare($query);
-        $stmt->bindParam(':id', $userId);
-        $stmt->execute();
-    }
-
-    // Atualizar as informações do usuário no banco de dados, incluindo o caminho da foto, bio e telefone
+    // Atualizar as informações do usuário no banco de dados, excluindo a parte da foto
     $query = "UPDATE users SET user_name = :user_name, email = :email, bio = :bio, phone = :phone WHERE id = :id";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':user_name', $newName);
@@ -74,7 +58,7 @@ $userPhone = $userInfo['phone'];
 <body class="flex justify-center items-center h-screen">
     <div class="max-w-md w-full">
         <h1 class="text-2xl mb-4">Change Info</h1>
-        <form action="./update.php" method="post" enctype="multipart/form-data">
+        <form action="./update.php" method="post">
             <label for="new_name">Name:</label>
             <input type="text" name="new_name" id="new_name" class="input-field w-full mb-4 px-3 py-2 border rounded-md"
                 value="<?php echo $userName; ?>" required placeholder="Enter your name"><br><br>
