@@ -16,13 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtenga los datos del formulário
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $name = $_POST['name'];
-
+    $name = $_POST['user_name'];
 
     // Verifique se o email já está em uso
-    $query = "SELECT id FROM users WHERE email = :email";
+    $query = "SELECT id FROM users WHERE email = ?";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(1, $email); // Use ? placeholder and bind by position
     $stmt->execute();
     $existingUser = $stmt->fetch();
 
@@ -33,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         // Insira o novo usuário no banco de dados
-        $query = "INSERT INTO users (email, password, user_name) VALUES (:email, :password, :user_name)";
+        $query = "INSERT INTO users (email, password, user_name) VALUES (?, ?, ?)";
         $stmt = $pdo->prepare($query);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $hashedPassword);
-        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(1, $email); // Use ? placeholder and bind by position
+        $stmt->bindParam(2, $hashedPassword); // Bind parameters by position
+        $stmt->bindParam(3, $name); // Bind parameters by position
         $stmt->execute();
 
         // Redirigir el usuário a la página de perfil
