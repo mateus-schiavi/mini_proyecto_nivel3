@@ -23,8 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ./profile.php');
         exit();
     } else {
-        $error_message = 'Invalid User or Password. Try Again';
+        $_SESSION['error'] = 'Invalid User or Password. Try Again'; // Armazena a mensagem de erro na sessão
         header('Location: ../index.php');
+        exit();
     }
 }
 ?>

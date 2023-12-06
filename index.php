@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!-- index page -->
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +28,17 @@ session_start();
                     paths for you to <br> choose
                 </p>
                 <form class="mt-6 text-center" action="./php/login.php" method="post">
+
+                    <div id="errorNotification"
+                        class="hidden bg-red-200 text-red-700 p-3 rounded-md fixed top-0 left-0 right-0 mx-auto mt-4 w-2/3 text-center">
+                        <?php
+                    // Verifica se há mensagens de erro na sessão e as exibe como notificação
+                    if (isset($_SESSION["error"])) {
+                        echo $_SESSION["error"];
+                        unset($_SESSION["error"]); // Remove a mensagem de erro da sessão para que não seja exibida novamente após atualização da página
+                    }
+                    ?>
+                    </div>
                     <div class="flex items-center border-b border-gray-300 py-2">
                         <input placeholder="Email" type="email" name="email" id="email" required
                             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">
@@ -51,6 +63,16 @@ session_start();
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
                             value="Start coding now">
                     </div>
+
+                    <script>
+                    // Exibe a notificação de erro, se houver uma mensagem de erro na sessão
+                    window.onload = function() {
+                        var errorNotification = document.getElementById('errorNotification');
+                        if (errorNotification.innerHTML.trim() !== '') {
+                            errorNotification.classList.remove('hidden');
+                        }
+                    };
+                    </script>
                 </form>
 
                 <h4 class="text-center mt-6">or continue with these social profiles</h4>

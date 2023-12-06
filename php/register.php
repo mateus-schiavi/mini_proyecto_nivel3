@@ -45,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
 
@@ -91,6 +93,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="submit"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-4 cursor-pointer"
                 value="Sign up">
+                <button onclick="goBack()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md mt-4 cursor-pointer">
+            Return to the main page
+        </button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
         </form>
 
         <h4 class="text-center mt-6">or continue with these social profiles</h4>
