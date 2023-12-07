@@ -83,7 +83,7 @@ session_start();
                     <img src="./assets/Facebook.svg" alt="facebook-logo" class="mr-2">
                 </div>
 
-                <h4 class="text-center mt-6">Don't have an account yet?<br> <a href="../php/register.php"
+                <h4 class="text-center mt-6">Don't have an account yet?<br> <a href="./php/register.php"
                         class="text-blue-500">Register</a></h4>
             </section>
         </main>
